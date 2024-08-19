@@ -7,7 +7,6 @@ const Signin = () => {
   const [lname, setLname] = useState<string>("");
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [conPassword, setConPassword] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const navigate = useNavigate();
 
@@ -20,16 +19,16 @@ const Signin = () => {
     setLname(valuelname);
   };
   const handleusername = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const valuefname = e.target.value;
-    setUsername(valuefname);
+    const valuefusername = e.target.value;
+    setUsername(valuefusername);
   };
   const handlepassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const valuefname = e.target.value;
-    setPassword(valuefname);
+    const valuefpassword = e.target.value;
+    setPassword(valuefpassword);
   };
   const handleemail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const valuefname = e.target.value;
-    setEmail(valuefname);
+    const valueemail = e.target.value;
+    setEmail(valueemail);
   };
 
   const handlesubmit = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -41,6 +40,8 @@ const Signin = () => {
         username: username,
         password: password,
         email: email,
+        avatar:
+          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       };
       navigate("/");
       console.log(item);

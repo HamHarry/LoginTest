@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
 import "./LoginPage.css";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [valueInput, setvalueInput] = useState<string>("");
   const [valuePassword, setvaluePassword] = useState<string>("");
-
+  const navigate = useNavigate();
   //Input and Password
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const valueI = e.target.value;
@@ -63,7 +64,12 @@ const LoginPage = () => {
         <div className="btn-login" onClick={handleSubmit}>
           <p>Login</p>
         </div>
-        <div className="btn-signIn">
+        <div
+          className="btn-signIn"
+          onClick={() => {
+            navigate("/signin");
+          }}
+        >
           <p>SignIn</p>
         </div>
       </form>

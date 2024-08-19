@@ -1,0 +1,89 @@
+.signin {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: url("../image/wallpaper.jpg");
+  background-size: cover;
+}
+.warp-signin {
+  position: fixed;
+  left: 50%;
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  backdrop-filter: blur(10px);
+  width: 600px;
+  height: 650px;
+  border: 2px solid red;
+  border-radius: 25px;
+}
+.signin h1 {
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-size: 42px;
+  font-family: "Lilita One", sans-serif;
+}
+.signin label {
+  color: white;
+  text-shadow: 5px 5px 10px black;
+  font-size: 18px;
+  font-family: "Lilita One", sans-serif;
+}
+.signin input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 25px;
+}
+.first-name {
+  display: flex;
+  flex-direction: column;
+}
+.last-name {
+  display: flex;
+  flex-direction: column;
+}
+.username {
+  display: flex;
+  flex-direction: column;
+}
+.password {
+  display: flex;
+  flex-direction: column;
+}
+.con-password {
+  display: flex;
+  flex-direction: column;
+}
+.email {
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+.btn-login {
+  color: white;
+  font-size: 24px;
+  text-shadow: 5px 5px 10px black;
+  font-family: "Lilita One", sans-serif;
+  cursor: pointer;
+}
+.btn-login:hover {
+  color: red;
+}
+.btn-signup {
+  color: white;
+  font-size: 24px;
+  text-shadow: 5px 5px 10px black;
+  font-family: "Lilita One", sans-serif;
+  cursor: pointer;
+}
+.btn-signup:hover {
+  color: red;
+}

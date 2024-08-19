@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
+import "./LoginPage.css";
 
 const LoginPage = () => {
   const [valueInput, setvalueInput] = useState<string>("");
   const [valuePassword, setvaluePassword] = useState<string>("");
 
+  //Input and Password
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const valueI = e.target.value;
     setvalueInput(valueI);
@@ -13,7 +15,9 @@ const LoginPage = () => {
     const valueP = e.target.value;
     setvaluePassword(valueP);
   };
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    e: React.MouseEvent<HTMLParagraphElement, MouseEvent>
+  ) => {
     try {
       e.preventDefault();
       const item = {
@@ -34,20 +38,35 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username: </label>
-        <input type="text" placeholder="Username..." onChange={handleInput} />
-        <label htmlFor="password">Password: </label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Password..."
-          onChange={handlePassword}
-        />
-        <input type="submit" />
+    <div className="login">
+      <form className="box-login">
+        <h1>LOGIN</h1>
+        <div className="box-username">
+          <label htmlFor="username">Username: </label>
+          <input
+            type="text"
+            placeholder="Username..."
+            onChange={handleInput}
+            className="userid"
+          />
+        </div>
+        <div className="box-password">
+          <label htmlFor="password">Password: </label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password..."
+            onChange={handlePassword}
+            className="userpassword"
+          />
+        </div>
+        <div className="btn-login" onClick={handleSubmit}>
+          <p>Login</p>
+        </div>
+        <div className="btn-signIn">
+          <p>SignIn</p>
+        </div>
       </form>
-      <div></div>
     </div>
   );
 };

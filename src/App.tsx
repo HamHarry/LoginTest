@@ -4,7 +4,7 @@ import LoginPage from "./Login/LoginPage";
 
 const App = () => {
   return (
-    <div>
+    <div className="container">
       <Routes>
         <Route path="/" element={<LoginPage />}></Route>
       </Routes>

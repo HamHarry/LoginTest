@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
 import "./Navbar.css";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
-export interface User {
+interface User {
   id: number;
   fname: string;
   lname: string;
-  username?: string;
+  username: string;
   avatar: string;
 }
 
@@ -17,14 +18,15 @@ interface Response<T> {
 
 const Navbar = () => {
   const [users, setUsers] = useState<User>();
+  const { id } = useParams();
 
   const fetchUsers = useCallback(async () => {
     const res = await axios.get<Response<User>>(
-      "https://www.melivecode.com/api/users/1"
+      `https://www.melivecode.com/api/users/${id}`
     );
     const userData = res.data.user;
     setUsers(userData);
-  }, []);
+  }, [id]);
   useEffect(() => {
     fetchUsers();
   }, [fetchUsers]);

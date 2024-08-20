@@ -7,7 +7,7 @@ const LoginPage = () => {
   const [valueInput, setvalueInput] = useState<string>("");
   const [valuePassword, setvaluePassword] = useState<string>("");
   const navigate = useNavigate();
-  //Input and Password
+
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const valueI = e.target.value;
     setvalueInput(valueI);
@@ -25,15 +25,15 @@ const LoginPage = () => {
         username: valueInput,
         password: valuePassword,
       };
-      console.log(item);
-
       const res = await axios.post(
         "https://www.melivecode.com/api/login",
         item
       );
       const loginUser = res.data;
       console.log(loginUser);
+      navigate("/home");
     } catch (error) {
+      alert("Username and password is wrong");
       console.log(error);
     }
   };

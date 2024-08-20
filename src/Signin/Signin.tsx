@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./Signin.css";
 import { useState } from "react";
+import axios from "axios";
 
 const Signin = () => {
   const [fname, setFname] = useState<string>("");
@@ -31,7 +32,9 @@ const Signin = () => {
     setEmail(valueemail);
   };
 
-  const handlesubmit = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handlesubmit = async (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     e.preventDefault();
     try {
       const item = {
@@ -43,8 +46,14 @@ const Signin = () => {
         avatar:
           "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       };
+      const res = await axios.post(
+        "https://www.melivecode.com/api/users/create",
+        item
+      );
+      const user = res.data;
+      console.log(user);
+      alert("SignUp successful");
       navigate("/");
-      console.log(item);
     } catch (error) {
       console.log(error);
     }

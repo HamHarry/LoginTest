@@ -25,6 +25,7 @@ const Navbar = () => {
       `https://www.melivecode.com/api/users/${id}`
     );
     const userData = res.data.user;
+    console.log(userData);
     setUsers(userData);
   }, [id]);
   useEffect(() => {

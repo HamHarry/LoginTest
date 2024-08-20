@@ -31,7 +31,7 @@ const LoginPage = () => {
       );
       const loginUser = res.data;
       console.log(loginUser);
-      navigate("/home/:id");
+      navigate(`/home/${loginUser.user.id}`);
     } catch (error) {
       alert("Username and password is wrong");
       console.log(error);

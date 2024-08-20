@@ -6,7 +6,7 @@ import HomePage from "./HomePage/HomePage";
 
 const App = () => {
   return (
-    <div className="container">
+    <div>
       <Routes>
         <Route path="/" element={<LoginPage />}></Route>
         <Route path="/signin" element={<Signin />}></Route>
